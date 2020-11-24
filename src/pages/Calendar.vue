@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto">
+  <div class="mt-10 w-1/2 mx-auto">
     <h1 class="text-2xl my-2 text-center">Vue Calendar</h1>
     <div class="mx-2 flex justify-between">
       <h2 class="font-bold">{{ currentMonth }}</h2>
