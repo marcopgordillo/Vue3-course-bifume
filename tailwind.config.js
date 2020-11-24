@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.green[500]
+      },
+      width: {
+        '1/7': '14.2857143%',
       }
     },
   },
