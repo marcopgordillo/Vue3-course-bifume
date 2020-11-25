@@ -34,7 +34,9 @@
 </template>
 
 <script>
-const heros = [
+import { ref, onMounted, computed } from 'vue'
+
+const herosData = [
   { id: 1, name: 'Batman' },
   { id: 2, name: 'Superman' },
   { id: 3, name: 'Wonder Woman' },
@@ -43,33 +45,43 @@ const heros = [
 ]
 
 export default {
-  data() {
-    return {
-      newHero: '',
-      heros: heros
-    }
-  },
-  computed: {
-    isDisabled() {
-      return this.newHero === ''
-    },
-    herosCount() {
-      return this.heros.length
-    }
-  },
-  methods: {
-    saveHero() {
-      if (this.newHero !== '') {
-        this.heros.push({id: Math.random(), name: this.newHero })
-        this.newHero = ''
+  setup() {
+    const newHeroRef = ref('');
+    const newHero = ref('');
+    const heros = ref(herosData);
+
+    function saveHero() {
+      if (newHero.value !== '') {
+        heros.value.unshift({id: Math.random(), name: newHero.value })
+        newHero.value = ''
       }
-    },
-    remove(index) {
-      this.heros = this.heros.filter((hero, i) => i !== index)
+    }
+
+    function remove(index) {
+      heros.value = heros.value.filter((hero, i) => i !== index)
+    }
+
+    const isDisabled = computed({
+      get: () => newHero.value === ''
+    })
+
+    const herosCount = computed({
+      get: () => heros.value.length
+    })
+
+    onMounted(() => {
+      newHeroRef.value.focus()
+    })
+
+    return {
+      newHero,
+      heros,
+      saveHero,
+      remove,
+      newHeroRef,
+      isDisabled,
+      herosCount
     }
   },
-  mounted () {
-    this.$refs.newHeroRef.focus()
-  }
 }
 </script>
