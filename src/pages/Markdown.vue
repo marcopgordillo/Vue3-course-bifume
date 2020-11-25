@@ -8,6 +8,7 @@
             class="w-full h-full" 
             :value="text" 
             @input="update"
+            ref="markdownTextArea"
           ></textarea>
         </article>
         <article class="markdown w-1/2 border bg-gray-100 h-screen" v-html="markedText"></article>
@@ -36,6 +37,15 @@ export default {
     update(e) {
       this.debounce(() => this.text = e.target.value, 500)
     },
+  },
+  mounted() {
+    this.$refs.markdownTextArea.focus()
   }
 }
 </script>
+
+<style>
+.markdown h1 {
+  @apply text-2xl font-bold;
+}
+</style>

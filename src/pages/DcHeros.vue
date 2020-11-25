@@ -15,7 +15,12 @@
         </li>
       </ul>
       <form class="mt-10" @submit.prevent="saveHero">
-        <input class="border rounded" type="text" v-model.lazy.trim="newHero">
+        <input 
+          class="border rounded" 
+          type="text" 
+          v-model.lazy.trim="newHero"
+          ref="newHeroRef"
+        >
         <button 
           class="border rounded bg-gradient-to-r from-red-700 to-pink-500 text-white ml-2 px-2"
           type="submit" 
@@ -62,6 +67,9 @@ export default {
     remove(index) {
       this.heros = this.heros.filter((hero, i) => i !== index)
     }
+  },
+  mounted () {
+    this.$refs.newHeroRef.focus()
   }
 }
 </script>
