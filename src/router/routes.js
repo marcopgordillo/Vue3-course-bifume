@@ -24,5 +24,15 @@ export default [
     name: 'Calendar',
     component: () => import(/* webpackChunkName: "calendar" */ '@/pages/Calendar.vue')
   },
+  {
+    path: '/markdown',
+    name: 'Markdown',
+    component: () => import(/* webpackChunkName: "markdown" */ '@/pages/Markdown.vue')
+  },
+  {
+    path: '/slider',
+    name: 'Slider',
+    component: () => import(/* webpackChunkName: "slider" */ '@/pages/Slider.vue')
+  },
 ]
 

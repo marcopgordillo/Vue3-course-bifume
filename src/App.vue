@@ -1,8 +1,6 @@
 <template>
   <Header />
-  <div class="container mx-auto">
-    <router-view/>
-  </div>
+  <router-view/>
 </template>
 
 <script>

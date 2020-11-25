@@ -6,10 +6,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.green[500]
+        primary: colors.green[500],
+        teal: colors.teal,
       },
       width: {
         '1/7': '14.2857143%',
+      },
+      height: {
+        '350': '350px',
+        '340': '340px',
       }
     },
   },
