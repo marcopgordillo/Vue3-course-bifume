@@ -34,5 +34,10 @@ export default [
     name: 'Slider',
     component: () => import(/* webpackChunkName: "slider" */ '@/pages/Slider.vue')
   },
+  {
+    path: '/calculator',
+    name: 'Calculator',
+    component: () => import(/* webpackChunkName: "calculator" */ '@/pages/Calculator.vue')
+  },
 ]
 
