@@ -28,14 +28,15 @@ import NavLink from './NavLink'
 import firebase from '@/utilities/firebase'
 
 const links = [
-  { path: '/', title: 'Home' },
-  { path: '/about', title: 'About' },
-  { path: '/heros', title: 'Heros' },
-  { path: '/calendar', title: 'Calendar' },
-  { path: '/markdown', title: 'Markdown' },
-  { path: '/slider', title: 'Slider' },
-  { path: '/calculator', title: 'Calculator' },
-  { path: '/modal', title: 'Modal' },
+  { to: '/', title: 'Home' },
+  { to: '/about', title: 'About' },
+  { to: '/heros', title: 'Heros' },
+  { to: '/calendar', title: 'Calendar' },
+  { to: '/markdown', title: 'Markdown' },
+  { to: '/slider', title: 'Slider' },
+  { to: '/calculator', title: 'Calculator' },
+  { to: '/modal', title: 'Modal' },
+  { to: '/chat', title: 'Chat' },
 ];
 
 export default {

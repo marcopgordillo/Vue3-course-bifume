@@ -1,12 +1,12 @@
 <template>
   <li class="inline-block">
-    <router-link :to="path">{{ title }}</router-link>
+    <router-link :to="to">{{ title }}</router-link>
   </li>
 </template>
 
 <script>
 export default {
-  props: ['title', 'path']
+  props: ['title', 'to']
 }
 </script>
 

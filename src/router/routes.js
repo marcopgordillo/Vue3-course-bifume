@@ -44,5 +44,10 @@ export default [
     name: 'ReusableModal',
     component: () => import(/* webpackChunkName: "modal" */ '@/pages/ReusableModal.vue')
   },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: () => import(/* webpackChunkName: "chat" */ '@/pages/Chat.vue')
+  },
 ]
 
