@@ -23,7 +23,9 @@
 </template>
 
 <script>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref } from 'vue'
+
+import useWindowEvent from '@/utilities/composition/useWindowEvent'
 
 const charsArray = ['1', '2', '3', '+', '4', '5', '6', '-', '7', '8', '9', '*', 'C', '0', '=', '/']
 
@@ -101,10 +103,8 @@ export default {
     }
 
     const handleKeydown = (e) => pressed(e.key)
-
-    onMounted(() => window.addEventListener('keydown', handleKeydown))
-
-    onBeforeUnmount(() => window.removeEventListener('keydown', handleKeydown))
+    
+    useWindowEvent('keydown', handleKeydown)
 
     return {
       currentNumber,

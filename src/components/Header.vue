@@ -35,6 +35,7 @@ const links = [
   { path: '/markdown', title: 'Markdown' },
   { path: '/slider', title: 'Slider' },
   { path: '/calculator', title: 'Calculator' },
+  { path: '/modal', title: 'Modal' },
 ];
 
 export default {

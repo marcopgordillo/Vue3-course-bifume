@@ -39,5 +39,10 @@ export default [
     name: 'Calculator',
     component: () => import(/* webpackChunkName: "calculator" */ '@/pages/Calculator.vue')
   },
+  {
+    path: '/modal',
+    name: 'ReusableModal',
+    component: () => import(/* webpackChunkName: "modal" */ '@/pages/ReusableModal.vue')
+  },
 ]
 
