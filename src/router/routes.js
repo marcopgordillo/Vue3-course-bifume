@@ -47,7 +47,8 @@ export default [
   {
     path: '/chat',
     name: 'Chat',
-    component: () => import(/* webpackChunkName: "chat" */ '@/pages/Chat.vue')
+    component: () => import(/* webpackChunkName: "chat" */ '@/pages/Chat.vue'),
+    meta: { middleware: 'auth' },
   },
 ]
 

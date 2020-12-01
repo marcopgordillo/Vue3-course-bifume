@@ -1,8 +1,8 @@
 <template>
-  <Header @open-login-modal="isLoginOpen = true" :isLoggedIn="isLoggedIn" />
+  <Header />
   <router-view/>
   <teleport to="body">
-    <LoginModal v-if="isLoginOpen" @close-login-modal="isLoginOpen = false" />
+    <LoginModal />
   </teleport>
 </template>
 
@@ -16,21 +16,14 @@ export default {
     Header,
     LoginModal
   },
-  data() {
-    return {
-      isLoginOpen: false,
-      isLoggedIn: false,
-      authUser: null
-    }
-  },
   mounted() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.isLoggedIn = true
-        this.authUser = user
+        this.$store.commit('setIsLoggedIn', true)
+        this.$store.commit('setAuthUser', user)
       } else {
-        this.isLoggedIn = false
-        this.authUser = null
+        this.$store.commit('setIsLoggedIn', false)
+        this.$store.commit('setAuthUser', null)
       }
     })
   }

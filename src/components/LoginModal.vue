@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isLoginOpen">
     <div
       @click="close"
       class="h-screen w-screen bg-gray-500 fixed top-0 opacity-50 z-20"
@@ -75,6 +75,11 @@ export default {
       error: null,
     }
   },
+  computed: {
+    isLoginOpen() {
+      return this.$store.state.isLoginOpen
+    }
+  },
   methods: {
     async submit() {
       this.isLoading = true
@@ -91,11 +96,11 @@ export default {
       }
     },
     close() {
-      this.$emit('close-login-modal')
+      this.$store.commit('setIsLoginOpen', false)
     },
   },
   mounted() {
-    this.$refs.emailRef.focus()
+    // this.$refs.emailRef.focus()
   }
 }
 </script>

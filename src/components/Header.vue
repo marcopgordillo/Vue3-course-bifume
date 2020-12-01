@@ -6,7 +6,7 @@
       <li class="inline-block">
         <button 
           v-if="!isLoggedIn"
-          @click="$emit('open-login-modal')"
+          @click="openLogin"
           class="mx-2"
         >
           Login
@@ -41,12 +41,6 @@ const links = [
 
 export default {
   emits: ['open-login-modal'],
-  props: {
-    isLoggedIn: {
-      type: Boolean,
-      required: true
-    }
-  },
   components: {
     NavLink
   },
@@ -55,13 +49,17 @@ export default {
       links,
     }
   },
+  computed: {
+    isLoggedIn() {
+      return this.$store.state.isLoggedIn
+    }
+  },
   methods: {
-    async logout() {
-      try{
-        await firebase.auth().signOut()
-      } catch (error) {
-        console.error(error)
-      }
+    logout() {
+      firebase.auth().signOut()
+    },
+    openLogin() {
+      this.$store.commit('setIsLoginOpen', true)
     }
   }
 }
