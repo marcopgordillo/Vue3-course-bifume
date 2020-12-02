@@ -37,6 +37,7 @@ const links = [
   { to: '/calculator', title: 'Calculator' },
   { to: '/modal', title: 'Modal' },
   { to: '/chat', title: 'Chat' },
+  { to: '/user-crud', title: 'User Crud' },
 ];
 
 export default {
