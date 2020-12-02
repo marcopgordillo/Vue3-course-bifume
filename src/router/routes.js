@@ -55,5 +55,10 @@ export default [
     name: 'UserCrud',
     component: () => import(/* webpackChunkName: "user-crud" */ '@/pages/UserCrud.vue')
   },
+  {
+    path: '/tensorflow',
+    name: 'Tensorflow',
+    component: () => import(/* webpackChunkName: "tensorflow" */ '@/pages/Tensorflow.vue')
+  },
 ]
 

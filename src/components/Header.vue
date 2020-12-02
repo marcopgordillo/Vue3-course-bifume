@@ -38,6 +38,7 @@ const links = [
   { to: '/modal', title: 'Modal' },
   { to: '/chat', title: 'Chat' },
   { to: '/user-crud', title: 'User Crud' },
+  { to: '/tensorflow', title: 'Tensorflow' },
 ];
 
 export default {
